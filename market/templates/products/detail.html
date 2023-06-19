@@ -29,9 +29,9 @@
 <p>слово</p>
 {% if image_list %}
 
-    {% for image in image_list %}
+    {% for i in image_list %}
         <p>
-            <p>{{image.image.url}}</p>
+            <img src="{{i.image.url}}" width="250" height="250">
         </p>
     {% endfor %}
 
