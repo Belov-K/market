@@ -16,8 +16,9 @@ def detail(request, product_id):
         raise Http404("Товар не найден")
 
     latest_review_list=a.review_set.order_by('-id')[:10]
-
-    return render(request, 'products/detail.html', {'product': a, 'latest_review_list': latest_review_list})
+    image_list=a.productimage_set.all()
+    print(image_list)
+    return render(request, 'products/detail.html', {'product': a, 'latest_review_list': latest_review_list, 'image_list': image_list})
 
 def leave_review(request, product_id):
     try:

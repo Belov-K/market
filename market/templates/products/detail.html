@@ -26,6 +26,18 @@
 {% else %}
 Отзывов нету
 {% endif %}
+<p>слово</p>
+{% if image_list %}
+
+    {% for image in image_list %}
+        <p>
+            <p>{{image.image.url}}</p>
+        </p>
+    {% endfor %}
+
+{% else %}
+Нету изображения
+{% endif %}
 
 </hr>
 

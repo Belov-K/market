@@ -22,3 +22,14 @@ class Review(models.Model):
     class Meta:
         verbose_name="Отзыв"
         verbose_name_plural="Отзывы"
+
+class ProductImage(models.Model):
+    """
+    Изображение продукта
+    """
+    product=models.ForeignKey(Product, on_delete=models.CASCADE)
+    image=models.ImageField('изображение')
+
+    class Meta:
+        verbose_name="Изображение продукта"
+        verbose_name_plural="Изображения продуктов"
