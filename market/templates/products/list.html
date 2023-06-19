@@ -4,6 +4,14 @@
 
 {% block content %}
 
-    Название товара
+    {% if latest_products_list %}
+
+        {% for a in latest_products_list %}
+            <a href="{% url 'products:detail' a.id %}">{{a.product_title}}</a>
+        {% endfor %}
+
+    {% else %}
+        Товар не найден
+    {% endif%}
 
 {% endblock %}
