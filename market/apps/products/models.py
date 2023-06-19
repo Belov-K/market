@@ -4,6 +4,8 @@ class Product(models.Model):
     product_title=models.CharField('название товара', max_length=200)
     product_text=models.TextField('описание товара')
     pub_date=models.DateTimeField('дата публикации товара')
+    price = models.IntegerField("цена товара", blank=True, null=True)
+    rate = models.FloatField("рейтинг товара", blank=True, null=True)
 
 class Review(models.Model):
     product=models.ForeignKey(Product, on_delete=models.CASCADE)
